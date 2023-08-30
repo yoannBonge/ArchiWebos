@@ -23,15 +23,18 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 	background-color: #FFFEF8;
 }
+
 ol, ul {
 	list-style: none;
 }
@@ -44,15 +47,18 @@ a {
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 /** end reset css**/
 body {
 	max-width: 1140px;
@@ -60,11 +66,13 @@ body {
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
+
 header {
 	display: flex;
 	justify-content: space-between;
 	margin: 95px 0 60px 0;
 }
+
 section {
 	margin: 50px 0
 }
@@ -104,6 +112,7 @@ nav ul {
 	gap: 28px;
 
 }
+
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
@@ -129,6 +138,7 @@ a:hover {
 	display: flex;
 	align-items: center;
 }
+
 #introduction figure {
 	flex: 1
 }
@@ -141,6 +151,7 @@ a:hover {
 #introduction article {
 	flex: 1
 }
+
 #introduction h2 {
 	margin-bottom: 1em;
 }
@@ -375,6 +386,7 @@ button:not(.publish):focus {
 	background-color: #1D6154;
 	outline: none;
 }
+
 .gallery {
 	width: 100%;
 	display: grid;
@@ -387,17 +399,21 @@ button:not(.publish):focus {
 	width: 100%;
 
 }
+
 #contact {
 	width: 50%;
 margin: auto;
 }
+
 #contact > * {
 	text-align: center;
 
 }
+
 #contact h2{
 	margin-bottom: 20px;
 }
+
 #contact form {
 	text-align: left;
 	margin-top:30px;
@@ -411,9 +427,11 @@ margin: auto;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
+
 #contact label {
 	margin: 2em 0 1em 0;
 }
+
 #contact textarea {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
