@@ -3,488 +3,562 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
 body {
-	line-height: 1;
-	background-color: #FFFEF8;
+  line-height: 1;
+  background-color: #fffef8;
 }
 
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
 
 a {
-	text-decoration: none;
-	color: black;
+  text-decoration: none;
+  color: black;
 }
 
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /** end reset css**/
 body {
-	max-width: 1140px;
-	margin:auto;
-	font-family: 'Work Sans' ;
-	font-size: 14px;
+  max-width: 1140px;
+  margin: auto;
+  font-family: "Work Sans";
+  font-size: 14px;
 }
 
 header {
-	display: flex;
-	justify-content: space-between;
-	margin: 95px 0 60px 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 95px 0 60px 0;
 }
 
 section {
-	margin: 50px 0
+  margin: 50px 0;
 }
 
 h1 {
-	display: flex;
-	flex-direction: column;
-	font-family: 'Syne';
-	font-size: 22px;
-	font-weight: 800;
-	color: #B1663C
+  display: flex;
+  flex-direction: column;
+  font-family: "Syne";
+  font-size: 22px;
+  font-weight: 800;
+  color: #b1663c;
 }
 
 .back-to-homepage {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 h1 > span {
-	font-family: 'Work Sans';
-	font-size: 9px;
-	letter-spacing: 0.1em;
-	font-weight: 600;
-	margin: 5px;
+  font-family: "Work Sans";
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin: 5px;
 }
 
 h2 {
-	font-family: 'Syne';
-	font-weight: 700;
-	font-size: 30px;
-	color: #1D6154;
+  font-family: "Syne";
+  font-weight: 700;
+  font-size: 30px;
+  color: #1d6154;
 }
 
 nav ul {
-	display: flex;
-	align-items: center;
-	list-style-type: none;
-	gap: 28px;
-
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  gap: 28px;
 }
 
 nav li {
-	padding: 0 10px;
-	font-size: 1.2em;
+  padding: 0 10px;
+  font-size: 1.2em;
 }
 
 nav img {
-	width: 50%;
+  width: 50%;
 }
 
 .login {
-	font-weight: 600;
+  font-weight: 600;
 }
 
 li:hover {
-	color: #B1663C;
+  color: #b1663c;
 }
 
 a:hover {
-	color: #B1663C;
+  color: #b1663c;
 }
 
 #introduction {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #introduction figure {
-	flex: 1
+  flex: 1;
 }
 #introduction img {
-	display: block;
-	margin: auto;
-	width: 80%;
+  display: block;
+  margin: auto;
+  width: 80%;
 }
 
 #introduction article {
-	flex: 1
+  flex: 1;
 }
 
 #introduction h2 {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 #introduction p {
-	margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .portfolio-title {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 10em 0 3em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10em 0 3em 0;
 }
 
 .portfolio-title h2 {
-	display: inline;
-	margin-right: 30px;
+  display: inline;
+  margin-right: 30px;
 }
 
 .banner {
-	background-color: rgb(0, 0, 0);
-	height: 55px;
-	display: flex;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	align-items: center;
-	justify-content: center;
+  background-color: rgb(0, 0, 0);
+  height: 55px;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
 }
 
 .banner-title {
-	color: white;
-	font-size: 16px;
+  color: white;
+  font-size: 16px;
 }
 
 .publish {
-	background-color: white;
-	color: black;
-	font: inherit;
-	font-size: 14px;
-	font-weight: 600;
-	padding: 10px 20px;
-	margin: 0 20px;
-	cursor: pointer;
-	border: none;
+  background-color: white;
+  color: black;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin: 0 20px;
+  cursor: pointer;
+  border: none;
 }
 
 .publish:active {
-	color: rgb(255, 255, 255);
-	background-color: #000000;
-	outline: none;
-	border: 1px solid white;
+  color: rgb(255, 255, 255);
+  background-color: #000000;
+  outline: none;
+  border: 1px solid white;
 }
 
 .modify-image-button {
-	position: absolute;
-	margin-top: -30px;
-	margin-left: 58px;
-	cursor: pointer;
+  position: absolute;
+  margin-top: -30px;
+  margin-left: 58px;
+  cursor: pointer;
 }
 
 .icon-modify {
-	margin-right: 10px;
+  margin-right: 10px;
 }
 
 #user-modal {
-	visibility: hidden;
-	position: fixed;
-	top: 0;
-	width: 100vw;
-	height: 100vh;
-	transition: visibility 0.4s;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: visibility 0.4s;
 }
 
 #user-modal.active {
-	visibility: visible;
+  visibility: visible;
 }
 
 .overlay {
-	opacity: 0;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.3);
-	transition: opacity 0.4s 0.1s ease-out;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  transition: opacity 0.4s 0.1s ease-out;
 }
 
 #user-modal.active .overlay {
-	opacity: 1;
-	transition: opacity 0.4s ease-out;
+  opacity: 1;
+  transition: opacity 0.4s ease-out;
 }
 
 .modal {
-	opacity: 0;
-	width: 95%;
-	max-width: 500px;
-	min-width: 300px;
-	max-height: 580px;
-	background: white;
-	border-radius: 10px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, calc(-50% - 50px));
-	transition: opacity 0.4s ease-out,
-	transform 0.4s ease-out;
-	box-sizing: border-box;
+  opacity: 0;
+  width: 95%;
+  max-width: 500px;
+  min-width: 300px;
+  max-height: 580px;
+  background: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 50px));
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  box-sizing: border-box;
 }
 
 #user-modal.active .modal {
-	opacity: 1;
-	transform: translate(-50%, -50%);
-	transition: opacity 0.4s 0.2s ease-out,
-	transform 0.4s 0.2s ease-out;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.4s 0.2s ease-out, transform 0.4s 0.2s ease-out;
 }
 
 .close-button i {
-	position: absolute;
-	padding: 1px;
-	top: 18px;
-	right: 22px;
-	cursor: pointer;
+  position: absolute;
+  padding: 1px;
+  top: 18px;
+  right: 22px;
+  cursor: pointer;
 }
 
 #modal-title {
-	display: flex;
-	justify-content: center;
-	align-self: center;
-	font: inherit;
-	font-size: 22px;
-	color: black;
-	margin: auto;
-	margin-top: 50px;
-	margin-bottom: 40px;
-	font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  font: inherit;
+  font-size: 22px;
+  color: black;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  font-weight: 500;
 }
 
 .modal-gallery {
-	display: flex;
-	flex: start;
-	flex-wrap: wrap;
-	width: 70%;
-	margin: auto;
-	margin-bottom: 40px;
-	gap: 8px;
-	overflow: auto;
+  display: flex;
+  flex: start;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 40px;
+  gap: 8px;
+  overflow: auto;
 }
 
 .modal-project {
-	width: 18%;
-	height: auto;
-	position: relative;
+  width: 18%;
+  height: auto;
+  position: relative;
 }
 
 .modal-img {
-	width: 100%;
-	height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .fa-trash-can {
-	color: white;
-	font-size: 7.5px;
-	position: absolute;
-	z-index: 2;
-	top: 8px;
-	right: 7.6px;
+  color: white;
+  font-size: 7.5px;
+  position: absolute;
+  z-index: 2;
+  top: 8px;
+  right: 7.6px;
 }
 
 .fa-square {
-	font-size: 16px;
-	position: absolute;
-	top: 4px;
-	right: 4px;
+  font-size: 16px;
+  position: absolute;
+  top: 4px;
+  right: 4px;
 }
 
-
 .modal-edit {
-	font-size: 10px;
-	margin-bottom: 1px;
+  font-size: 10px;
+  margin-bottom: 1px;
 }
 
 .edit-gallery {
-	width: 70%;
-	margin: auto ;
-	border-top: 1px solid rgb(184, 184, 184);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 25px;
+  width: 70%;
+  margin: auto;
+  border-top: 1px solid rgb(184, 184, 184);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
 }
 
 .add-picture {
-	font-size: 12px;
-	color:white;
-	background-color: #1D6154;
-	width: 200px;
-	margin: 30px 0 0 0;
-	cursor: pointer;
+  font-size: 12px;
+  color: white;
+  background-color: #1d6154;
+  width: 200px;
+  margin: 30px 0 0 0;
+  cursor: pointer;
 }
 
 .delete-gallery {
-	font-size: 10px;
-	color: red;
-	background-color: white;
-	border: none;
-	margin-bottom: 40px;
-	padding: 0;
-	cursor: pointer;
+  font-size: 10px;
+  color: red;
+  background-color: white;
+  border: none;
+  margin-bottom: 40px;
+  padding: 0;
+  cursor: pointer;
 }
 
 .filters-buttons {
-	display: flex;
-	justify-content: center;
-	gap: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 button {
-	font-family: 'Syne';
-	color: #1D6154;
-	background-color: white;
-	min-width: 80px;
-	padding: 5px 10px;
-	margin-bottom: 40px;
-	border: 1px solid #1D6154 ;
-	border-radius: 20px;
+  font-family: "Syne";
+  color: #1d6154;
+  background-color: white;
+  min-width: 80px;
+  padding: 5px 10px;
+  margin-bottom: 40px;
+  border: 1px solid #1d6154;
+  border-radius: 20px;
 }
 
 button:not(.publish):focus {
-	color: white;
-	background-color: #1D6154;
-	outline: none;
+  color: white;
+  background-color: #1d6154;
+  outline: none;
 }
 
 .gallery {
-	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-column-gap: 20px;
-	grid-row-gap: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 }
 
 .gallery img {
-	width: 100%;
-
+  width: 100%;
 }
 
 #contact {
-	width: 50%;
-margin: auto;
+  width: 50%;
+  margin: auto;
 }
 
 #contact > * {
-	text-align: center;
-
+  text-align: center;
 }
 
-#contact h2{
-	margin-bottom: 20px;
+#contact h2 {
+  margin-bottom: 20px;
 }
 
 #contact form {
-	text-align: left;
-	margin-top:30px;
-	display: flex;
-	flex-direction: column;
+  text-align: left;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 #contact input {
-	height: 50px;
-	font-size: 1.2em;
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
 #contact label {
-	margin: 2em 0 1em 0;
+  margin: 2em 0 1em 0;
 }
 
 #contact textarea {
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
 #login {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin-top: 150px;
-	margin-bottom: 300px;
-	gap: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px;
+  margin-bottom: 300px;
+  gap: 25px;
 }
 
 #login h2 {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 #login div {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-input[type="email"], input[type="password"] {
-	height: 48px;
-	border: none;
-	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+input[type="email"],
+input[type="password"] {
+  height: 48px;
+  border: none;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-input[type="submit"]{
-	font-family: 'Syne';
-	font-weight: 700;
-	color: white;
-	background-color: #1D6154;
-	padding: 10px 13px;
-	margin : 3em auto 2em auto;
-	width: 180px;
-	text-align: center;
-	border-radius: 60px;
-	border: none;
+input[type="submit"] {
+  font-family: "Syne";
+  font-weight: 700;
+  color: white;
+  background-color: #1d6154;
+  padding: 10px 13px;
+  margin: 3em auto 2em auto;
+  width: 180px;
+  text-align: center;
+  border-radius: 60px;
+  border: none;
 }
 
 .forgetpass {
-	display: flex;
-	align-items: center;
-	text-decoration: underline;
+  display: flex;
+  align-items: center;
+  text-decoration: underline;
 }
 
 footer nav ul {
-	font-size: 12px;
-	display: flex;
-	justify-content: flex-end;
-	margin: 2em;
+  font-size: 12px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 2em;
 }
-
