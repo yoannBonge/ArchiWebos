@@ -406,6 +406,10 @@ a:hover {
   right: 4px;
 }
 
+.delete-project {
+  cursor: pointer;
+}
+
 .modal-edit {
   font-size: 10px;
   margin-bottom: 1px;
