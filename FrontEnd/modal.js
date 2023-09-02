@@ -26,6 +26,7 @@ function displayProjectsInModal(works) {
   works.forEach((project) => {
     const projectBox = document.createElement("div");
     projectBox.classList.add("modal-project");
+    projectBox.setAttribute("id", project.id);
 
     const imageProject = document.createElement("img");
     imageProject.classList.add("modal-img");
@@ -46,12 +47,11 @@ function displayProjectsInModal(works) {
       event.preventDefault();
       const projectId = event.currentTarget.getAttribute("id");
       const confirmation = window.confirm(
-        "Êtes-vous sûr de vouloir supprimer ce projet du site ?"
+        "Êtes-vous sûr(e) de vouloir supprimer ce projet du site ?"
       );
 
       if (confirmation) {
         deleteProject(projectId);
-        alert("Projet supprimé du site");
       } else {
         return;
       }
@@ -86,7 +86,7 @@ async function deleteProject(projectId) {
       deletedProjectModal.remove();
 
       const deletedProjectGallery = document.querySelector(
-        `.project[id="${projectId}"]`
+        `.gallery figure[id="${projectId}"]`
       );
       if (deletedProjectGallery) {
         deletedProjectGallery.remove();

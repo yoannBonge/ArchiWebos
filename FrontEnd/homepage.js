@@ -15,22 +15,20 @@ async function getProjects() {
 
 function displayProjects(works) {
   const gallery = document.querySelector(".gallery");
-  //On map une nouvelle liste "projectHTML" qui va chercher dans chaque projet de "works" son image et son nom.
-  const projectsHTML = works.map((project) => {
-    let imageProject = project.imageUrl;
-    let titleProject = project.title;
-    //On demande qu'il retourne (toujours pour chaque projet) un bloc HTML avec son image et son nom.
-    return `
-      <figure>
-        <img src="${imageProject}">
-        <figcaption>${titleProject}</figcaption>
-      </figure>
-    `;
+  works.forEach((project) => {
+    const projectFigure = document.createElement("figure");
+    projectFigure.setAttribute("id", project.id);
+
+    const imageProject = document.createElement("img");
+    imageProject.src = project.imageUrl;
+
+    const titleProject = document.createElement("figcaption");
+    titleProject.textContent = `${project.title}`;
+
+    projectFigure.append(imageProject, titleProject);
+
+    gallery.appendChild(projectFigure);
   });
-  //On ajoute tous les éléments (générés dans la nouvelle liste), dans la balise gallery.
-  //La méthode "join" fusionne toutes les balises <figure> générées afin que le tout soit envoyé dans le
-  //HTML non pas sous la forme d'un tableau mais d'une seule chaîne de caractères.
-  gallery.innerHTML = projectsHTML.join("");
 }
 
 //============================PARTIE FILTRES============================
@@ -50,6 +48,7 @@ function generateButtons(categories) {
   const buttonAll = document.createElement("button");
   buttonAll.textContent = "Tous";
   buttonAll.addEventListener("click", () => {
+    gallery.innerHTML = "";
     displayProjects(arrayWorks);
   });
   //On ajoute le bouton "Tous" aux filtres, qu'on focus par défaut.
@@ -63,6 +62,7 @@ function generateButtons(categories) {
     button.textContent = category.name;
     button.addEventListener("click", () => {
       let filteredWorks = filterArrayByNames(arrayWorks, name);
+      gallery.innerHTML = "";
       displayProjects(filteredWorks);
     });
     filtersButtons.appendChild(button);
