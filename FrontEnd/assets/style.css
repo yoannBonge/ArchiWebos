@@ -301,7 +301,7 @@ a:hover {
 #user-modal {
   visibility: hidden;
   position: fixed;
-  top: 0;
+  top: 10px;
   width: 100vw;
   height: 100vh;
   transition: visibility 0.4s;
@@ -313,6 +313,7 @@ a:hover {
 
 .overlay {
   opacity: 0;
+  top: 45px;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -339,7 +340,6 @@ a:hover {
   transform: translate(-50%, calc(-50% - 50px));
   transition: opacity 0.4s ease-out, transform 0.4s ease-out;
   box-sizing: border-box;
-  overflow: auto;
 }
 
 #user-modal.active .modal {
@@ -349,6 +349,7 @@ a:hover {
 }
 
 .close-button i {
+  font-size: 18px;
   position: absolute;
   padding: 1px;
   top: 18px;
@@ -369,13 +370,14 @@ a:hover {
   font-weight: 500;
 }
 
-.modal-gallery {
+.modal-main-content {
   display: flex;
   flex: start;
   flex-wrap: wrap;
   width: 70%;
   margin: auto;
   margin-bottom: 40px;
+  padding: 0 20px;
   gap: 8px;
   overflow: auto;
 }
@@ -416,7 +418,7 @@ a:hover {
   margin-bottom: 1px;
 }
 
-.edit-gallery {
+.edit-content {
   width: 70%;
   margin: auto;
   border-top: 1px solid rgb(184, 184, 184);
@@ -426,13 +428,147 @@ a:hover {
   gap: 25px;
 }
 
-.add-picture {
+.add-photo {
   font-size: 12px;
   color: white;
   background-color: #1d6154;
   width: 200px;
   margin: 30px 0 0 0;
   cursor: pointer;
+}
+
+.back-to-modal-gallery {
+  font-size: 18px;
+  position: absolute;
+  padding: 1px;
+  top: 18px;
+  left: 22px;
+  cursor: pointer;
+}
+
+.add-project-form {
+  display: flex;
+  flex: start;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-bottom: 13px;
+  padding: 0 20px;
+  gap: 8px;
+  overflow: auto;
+}
+
+.image-canva {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 150px;
+  background-color: #e8f1f6;
+  gap: 10px;
+}
+
+.image-icon {
+  font-size: 55px;
+  color: #b9c5cc;
+}
+
+.add-photo-btn {
+  font: inherit;
+  font-size: 12px;
+  font-weight: bolder;
+  color: #316786;
+  background-color: #cbd6dc;
+  border: none;
+  padding: 10px 30px;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.selected-image {
+  width: auto;
+  height: 150px;
+}
+
+.return-button {
+  font-family: "Syne";
+  color: #316786;
+  background-color: white;
+  font-size: 12px;
+  position: absolute;
+  min-width: 70px;
+  top: 225px;
+  right: 110px;
+  padding: 3px 5px;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.return-button:active {
+  color: white;
+  background-color: #316786;
+}
+
+.photo-rules {
+  font-size: 10px;
+}
+
+.title-input,
+.category-input {
+  font: bolder;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+}
+
+.title-input {
+  margin: 15px 0px 10px 0;
+}
+
+.title-input input {
+  height: 40px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.category-input select {
+  height: 45px;
+  box-shadow: 0px 0px 21px -6px rgba(0, 0, 0, 0.28);
+  border: none;
+  cursor: pointer;
+}
+
+.line {
+  border-top: 1px solid #a7a7a7;
+  width: 100%;
+  margin: 30px 0 20px 0;
+}
+
+#add-photo-valid:not([disabled]) {
+  background-color: #1d6154;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 60%;
+  padding: 8px;
+  cursor: pointer;
+}
+
+#add-photo-valid[disabled] {
+  background-color: #a7a7a7;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 60%;
+  padding: 8px;
+  border: none;
+  cursor: not-allowed;
 }
 
 .delete-gallery {
@@ -462,7 +598,7 @@ button {
   border-radius: 20px;
 }
 
-button:not(.publish, .delete-gallery):focus {
+button:not(.publish, .delete-gallery, .add-photo-btn, .return-button):focus {
   color: white;
   background-color: #1d6154;
   outline: none;
