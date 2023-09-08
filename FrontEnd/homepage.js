@@ -1,15 +1,15 @@
 //============================PARTIE PROJETS============================
 
-//On crée une variable qui servira à stocker les projets selon qu'ils sont filtrés ou non.
+// On crée une variable qui servira à stocker les projets selon qu'ils sont filtrés ou non.
 let arrayWorks = "";
 
-//On crée la fonction async qui demande à l'API de lui fournir la liste des projets.
+// On crée la fonction async qui demande à l'API de lui fournir la liste des projets.
 async function getProjects() {
   const response = await fetch("http://localhost:5678/api/works");
   const data = await response.json();
-  //On stocke aussi la réponse de l'API dans la variable dont on se servira pour filtrer les projets.
+  // On stocke aussi la réponse de l'API dans la variable dont on se servira pour filtrer les projets.
   arrayWorks = data;
-  //On appelle la fonction qui affiche les projets.
+  // On appelle la fonction qui affiche les projets.
   displayProjects(data);
 }
 
@@ -33,7 +33,7 @@ function displayProjects(works) {
 
 //============================PARTIE FILTRES============================
 
-//On crée la fonction async qui demande à l'API de lui fournir la liste des catégories de projets.
+// On crée la fonction async qui demande à l'API de lui fournir la liste des catégories de projets.
 async function getCategories() {
   const response = await fetch("http://localhost:5678/api/categories");
   const categories = await response.json();
@@ -41,21 +41,20 @@ async function getCategories() {
   generateButtons(categories);
 }
 
-//On crée la fonction qui génère les boutons de filtres.
+// On crée la fonction qui génère les boutons de filtres.
 function generateButtons(categories) {
   const filtersButtons = document.querySelector(".filters-buttons");
-  //On profite de cette fonction pour d'abord créer un bouton "Tous".
+  // On profite de cette fonction pour d'abord créer un bouton "Tous".
   const buttonAll = document.createElement("button");
   buttonAll.textContent = "Tous";
   buttonAll.addEventListener("click", () => {
     gallery.innerHTML = "";
     displayProjects(arrayWorks);
   });
-  //On ajoute le bouton "Tous" aux filtres, qu'on focus par défaut.
+  // On ajoute le bouton "Tous" aux filtres, qu'on focus par défaut.
   filtersButtons.appendChild(buttonAll);
-  buttonAll.focus();
-  //Dans une boucle, on parcourt les catégories. Pour chacune, on crée un bouton qu'on nomme par sa catégorie.
-  //Au click de chaque bouton, on filtre la gallerie en fonction du nom de sa catégorie.
+  // Dans une boucle, on parcourt les catégories. Pour chacune, on crée un bouton qu'on nomme par sa catégorie.
+  // Au click de chaque bouton, on filtre la gallerie en fonction du nom de sa catégorie.
   for (category of categories) {
     const button = document.createElement("button");
     const name = category.name;
@@ -69,17 +68,17 @@ function generateButtons(categories) {
   }
 }
 
-//On crée la fonction qui filtre la liste des projets pour ne retourner que ses éléments dont le nom
-//de catégorie est identique à ceux de la liste des catégories.
+// On crée la fonction qui filtre la liste des projets pour ne retourner que ses éléments dont le nom
+// de catégorie est identique à ceux de la liste des catégories.
 function filterArrayByNames(arrayWorks, categoryName) {
   return arrayWorks.filter((project) => {
     return project.category.name === categoryName;
   });
 }
-//La fonction qui ajoute le bouton "modifier" si l'user est connecté, et qui remplace le lien "login" par "logout",
-//de manière à ce qu'il puisse se déconnecter.
+// La fonction qui ajoute le bouton "modifier" si l'user est connecté, et qui remplace le lien "login" par "logout",
+// de manière à ce qu'il puisse se déconnecter.
 function updatePageForLoggedUser() {
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
   if (token === null) {
     return;
   } else {
@@ -88,15 +87,15 @@ function updatePageForLoggedUser() {
     let logInLink = document.querySelector('nav li a[href="login.html"]');
     logInLink.textContent = "logout";
     logInLink.addEventListener("click", () => {
-      alert("Vous êtes déconnecté");
-      localStorage.removeItem("token");
+      alert("Vous êtes déconnecté(e).");
+      sessionStorage.removeItem("token");
       window.location.href = "login.html";
     });
   }
 }
-
+// La fonction qui crée et affiche le bouton "modifier" pour accéder à la modale d'édition des projets.
 function addModifyButton() {
-  let token = localStorage.getItem("token");
+  let token = sessionStorage.getItem("token");
   if (token === null) {
     return;
   } else {
@@ -113,6 +112,7 @@ function addModifyButton() {
     modifyButton.appendChild(iconModify);
     modifyButton.appendChild(textNode);
     modifyButton.classList.add("modify-gallery-button");
+    // La fonction toggleModal est définie dans la page "modal.js". Elle affiche la modale.
     modifyButton.addEventListener("click", toggleModal);
 
     const portfolioTitle = document.querySelector(
