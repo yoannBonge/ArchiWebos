@@ -1,15 +1,13 @@
 // La fonction principale qui demande l'authentification lorsque le formulaire est rempli puis
 // que le bouton "Se connecter" est cliqué.
 function logIn() {
-  // On permet de revenir à l'accueil en cliquant sur "Sophie Bluel".
+  // Là, on permet de revenir à l'accueil en cliquant sur "Sophie Bluel".
   canGoBackToHomepage();
 
-  // On pointe vers le formulaire qui servira à se connecter.
   let logInForm = document.querySelector("form");
 
-  // À la soumission du formulaire, on bloque le reload de la page puis on soumet la tentative
-  // de connexion. Si elle est validée, on stocke le token et on vérifie la connexion pour enfin
-  // renvoyer l'utilisateur sur la page d'accueil, ou en cas d'échec, alerter.
+  // À la soumission du formulaire, si la connexion est validée, on stocke le token et on vérifie la
+  // connexion pour enfin renvoyer l'utilisateur sur la page d'accueil, ou en cas d'échec, alerter.
   logInForm.addEventListener("submit", (event) => {
     event.preventDefault();
     submitForm();
@@ -32,7 +30,7 @@ function canGoBackToHomepage() {
   });
 }
 
-// On crée une fonction qui identifie les valeurs entrées par l'utilisateur puis qui les soumet
+// On crée la fonction qui obtient les valeurs entrées par l'utilisateur puis qui les soumet
 // à l'API.
 function submitForm() {
   let emailField = document.getElementById("mail");
@@ -42,8 +40,8 @@ function submitForm() {
   fetchLogIn(email, pass);
 }
 
-// La fonction async qui demande à l'API l'authentification de l'utilisateur, puis qui vérifie que
-// l'authentification a bien eu lieu.
+// La fonction qui demande à l'API l'authentification de l'utilisateur, puis qui vérifie que
+// l'authentification a bien eue lieu.
 async function fetchLogIn(mail, password) {
   // On crée le body qui contiendra les informations prises en compte pour authentifier l'utilisateur,
   // conformément à la documentation de l'API.
