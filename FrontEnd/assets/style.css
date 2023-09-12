@@ -304,7 +304,6 @@ a:hover {
   top: 10px;
   width: 100vw;
   height: 100vh;
-  transition: visibility 0.4s;
 }
 
 #user-modal.active {
@@ -318,12 +317,10 @@ a:hover {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.3);
-  transition: opacity 0.4s 0.1s ease-out;
 }
 
 #user-modal.active .overlay {
   opacity: 1;
-  transition: opacity 0.4s ease-out;
 }
 
 .modal {
@@ -338,14 +335,11 @@ a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, calc(-50% - 50px));
-  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
   box-sizing: border-box;
 }
 
 #user-modal.active .modal {
   opacity: 1;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.4s 0.2s ease-out, transform 0.4s 0.2s ease-out;
 }
 
 .close-button i {
@@ -390,7 +384,7 @@ a:hover {
 
 .modal-img {
   width: 100%;
-  height: auto;
+  height: 80px;
 }
 
 .fa-trash-can {
@@ -614,6 +608,7 @@ button:not(.publish, .delete-gallery, .add-photo-btn, .return-button):focus {
 
 .gallery img {
   width: 100%;
+  height: 38em;
 }
 
 #contact {

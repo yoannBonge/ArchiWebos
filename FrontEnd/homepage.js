@@ -33,7 +33,7 @@ function displayProjects(works) {
 
 //============================PARTIE FILTRES============================
 
-// On crée la fonction async qui demande à l'API de lui fournir la liste des catégories de projets.
+// On crée la fonction qui demande à l'API de lui fournir la liste des catégories de projets.
 async function getCategories() {
   const response = await fetch("http://localhost:5678/api/categories");
   const categories = await response.json();
@@ -51,10 +51,10 @@ function generateButtons(categories) {
     gallery.innerHTML = "";
     displayProjects(arrayWorks);
   });
-  // On ajoute le bouton "Tous" aux filtres, qu'on focus par défaut.
+  // On ajoute le bouton "Tous" aux filtres.
   filtersButtons.appendChild(buttonAll);
   // Dans une boucle, on parcourt les catégories. Pour chacune, on crée un bouton qu'on nomme par sa catégorie.
-  // Au click de chaque bouton, on filtre la gallerie en fonction du nom de sa catégorie.
+  // Au click de chaque bouton, on filtre la galerie en fonction du nom de sa catégorie.
   for (category of categories) {
     const button = document.createElement("button");
     const name = category.name;
@@ -75,8 +75,8 @@ function filterArrayByNames(arrayWorks, categoryName) {
     return project.category.name === categoryName;
   });
 }
-// La fonction qui ajoute le bouton "modifier" si l'user est connecté, et qui remplace le lien "login" par "logout",
-// de manière à ce qu'il puisse se déconnecter.
+// La fonction qui ajoute le bouton "modifier" ainsi que la bandeau noir en haut de page si l'user est connecté,
+// et qui remplace le lien "login" par "logout", de manière à ce qu'il puisse se déconnecter.
 function updatePageForLoggedUser() {
   const token = sessionStorage.getItem("token");
   if (token === null) {
@@ -84,7 +84,7 @@ function updatePageForLoggedUser() {
   } else {
     addLoggedUserTopBanner();
     addModifyButton();
-    let logInLink = document.querySelector('nav li a[href="login.html"]');
+    let logInLink = document.querySelector("nav li a[href='login.html']");
     logInLink.textContent = "logout";
     logInLink.addEventListener("click", () => {
       alert("Vous êtes déconnecté(e).");
@@ -93,7 +93,7 @@ function updatePageForLoggedUser() {
     });
   }
 }
-// La fonction qui crée et affiche le bouton "modifier" pour accéder à la modale d'édition des projets.
+// La fonction qui crée et affiche le bouton "modifier" pour accéder à la modale d'édition de la galerie.
 function addModifyButton() {
   let token = sessionStorage.getItem("token");
   if (token === null) {
@@ -112,7 +112,7 @@ function addModifyButton() {
     modifyButton.appendChild(iconModify);
     modifyButton.appendChild(textNode);
     modifyButton.classList.add("modify-gallery-button");
-    // La fonction toggleModal est définie dans la page "modal.js". Elle affiche la modale.
+    // La fonction toggleModal est définie dans la page "modal.js". Elle affiche (et masque) la modale.
     modifyButton.addEventListener("click", toggleModal);
 
     const portfolioTitle = document.querySelector(

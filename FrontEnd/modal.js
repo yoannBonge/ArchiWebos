@@ -152,7 +152,7 @@ async function deleteProject(projectId) {
       }
     }
   } else {
-    alert("Échec de la tentative de suppression de la ressource");
+    alert("Échec de la tentative de suppression du projet");
   }
 }
 
@@ -185,20 +185,20 @@ function generateBackToGallery() {
   modal.insertBefore(backButtonContainer, closeButton);
 
   backToModalGallery.addEventListener("click", () => {
-    setTimeout(changeModalTitle, 2);
+    changeModalTitle();
     backButtonContainer.remove();
     displayGalleryModal();
   });
 }
 
-// Cette fonction nous sert pour switcher le titre de la modale, selon que l'on soit dans la galerie
-// ou dans l'interface d'ajout de projet.
+// Cette fonction renomme le titre de la modale pour que lorsqu'on ferme cette dernière, étant donné le
+// toggle, on lui rende son titre principal : "Galerie photo".
 function changeModalTitle() {
   const modalTitle = document.getElementById("modal-title");
   modalTitle.textContent = "Galerie photo";
 }
 
-// Cette fonction peut paraître bien longue, mais c'est parce-qu'elle crée chaque élément de l'interface
+// Cette longue fonction crée chaque élément de l'interface
 // d'ajout de projet.
 function generateAddProjectForm() {
   const addProjectForm = document.createElement("form");
@@ -338,9 +338,8 @@ function displaySelectedImage(photoInput, imageCanva) {
     // maximale que l'on acceptera pour le fichier.
     const allowedTypes = ["image/jpeg", "image/jpg", "image/png"];
     const maxSize = 4 * 1024 * 1024;
-    // Si le fichier a un type inclu dans la liste de types et une taille qui n'excède pas la taille maximale
-    // qu'on a défini, on se sert de "FileReader" pour lire ce fichier puis fournir une URL qui constituera la
-    // source du fichier qu'on affichera ensuite dans l'espace dédié dans la modale.
+    // Si le fichier est conforme aux restrictions, on se sert de "FileReader" pour le lire puis fournir
+    // une URL qui constituera la source du fichier qu'on affichera ensuite dans l'espace dédié dans la modale.
     if (
       allowedTypes.includes(selectedFile.type) &&
       selectedFile.size <= maxSize
@@ -398,22 +397,34 @@ async function fetchAddProject(titleValue, selectedImage, selectedCategoryId) {
   formData.append("title", titleValue);
   formData.append("category", selectedCategoryId);
   const token = sessionStorage.getItem("token");
-  console.log(token);
-  console.log(selectedImage);
-  console.log(titleValue);
-  console.log(selectedCategoryId);
 
   const response = await fetch("http://localhost:5678/api/works", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
-      accept: "application/json",
-      "Content-Type": "multipart/form-data",
+      Accept: "application/json",
+      // "Content-Type": "multipart/form-data",
     },
     body: formData,
   });
 
   if (response.ok) {
-    console.log("Votre projet a bien été ajouté à la base de données");
+    const addedProject = await response.json();
+    const gallery = document.querySelector(".gallery");
+
+    const projectFigure = document.createElement("figure");
+    projectFigure.setAttribute("id", addedProject.id);
+
+    const imageProject = document.createElement("img");
+    imageProject.src = addedProject.imageUrl;
+
+    const titleProject = document.createElement("figcaption");
+    titleProject.textContent = `${addedProject.title}`;
+
+    projectFigure.append(imageProject, titleProject);
+
+    gallery.appendChild(projectFigure);
+    toggleModal();
+    alert("Votre projet a bien été ajouté à la galerie");
   }
 }
