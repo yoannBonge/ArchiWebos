@@ -332,7 +332,7 @@ a:hover {
   background: white;
   border-radius: 10px;
   position: absolute;
-  top: 50%;
+  top: 58%;
   left: 50%;
   transform: translate(-50%, calc(-50% - 50px));
   box-sizing: border-box;
