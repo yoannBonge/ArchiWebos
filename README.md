@@ -2,7 +2,7 @@
 # Architect portfolio
 
 
-Creation of elements of a fictitious website presenting the portfolio of an architect, in HTML/CSS/Javascript.
+Creation of dynamic elements of a fictitious website presenting the portfolio of an architect, in HTML/CSS/Javascript.
 (This project was carried out as part of a web development training)
 ## Authors
 
