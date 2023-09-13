@@ -10,6 +10,13 @@ Creation of elements of a fictitious website presenting the portfolio of an arch
 
 
 ## Screenshots
+![homepage logged out](https://github.com/yoannBonge/ArchiWebos/blob/main/FrontEnd/assets/screenshots/homepage%20logged%20out.png)
+![gallery](https://github.com/yoannBonge/ArchiWebos/blob/main/FrontEnd/assets/screenshots/gallery.png)
+![filtered gallery](https://github.com/yoannBonge/ArchiWebos/blob/main/FrontEnd/assets/screenshots/filtered%20gallery.png)
+![login page](https://github.com/yoannBonge/ArchiWebos/blob/main/FrontEnd/assets/screenshots/login%20page.png)
+![homepage logged in](https://github.com/yoannBonge/ArchiWebos/blob/main/FrontEnd/assets/screenshots/homepage%20logged%20in.png)
+![edition modal](https://github.com/yoannBonge/ArchiWebos/blob/main/FrontEnd/assets/screenshots/edition%20modal.png)
+![add modal](https://github.com/yoannBonge/ArchiWebos/blob/main/FrontEnd/assets/screenshots/add%20modal.png)
 
 
 
